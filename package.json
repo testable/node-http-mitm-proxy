@@ -1,6 +1,6 @@
 {
-  "name": "http-mitm-proxy",
-  "version": "0.6.1",
+  "name": "http-mitm-proxy-patch",
+  "version": "0.6.10",
   "description": "HTTP Man In The Middle (MITM) Proxy",
   "main": "index.js",
   "types": "index.d.ts",
@@ -40,6 +40,6 @@
     "node-forge": "^0.7.1",
     "optimist": "^0.6.1",
     "semaphore": "^1.1.0",
-    "ws": "^3.2.0"
+    "ws": "^6.1.2"
   }
 }
