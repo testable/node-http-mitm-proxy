@@ -123,7 +123,6 @@ __Arguments__
   * port - The port or named socket to listen on (default: 8080).
   * host - The hostname or local address to listen on.
   * sslCaDir - Path to the certificates cache directory (default: process.cwd() + '/.http-mitm-proxy')
-  * silent - if set to true, nothing will be written to console (default: false)
   * keepAlive - enable [HTTP persistent connection](https://en.wikipedia.org/wiki/HTTP_persistent_connection)
   * timeout - The number of milliseconds of inactivity before a socket is presumed to have timed out. Defaults to no timeout.
   * httpAgent - The [http.Agent](https://nodejs.org/api/http.html#http_class_http_agent) to use when making http requests. Useful for chaining proxys. (default: internal Agent)
@@ -412,8 +411,8 @@ __Arguments__
 __Example__
 
     proxy.onWebSocketFrame(function(ctx, type, fromServer, data, flags, callback) {
-      console.log('WEBSOCKET FRAME ' + type + ' received from ' + (fromServer ? 'server' : 'client'), ctx.clientToProxyWebSocket.upgradeReq.url, message);
-      return callback(null, message, flags);
+      console.log('WEBSOCKET FRAME ' + type + ' received from ' + (fromServer ? 'server' : 'client'), ctx.clientToProxyWebSocket.upgradeReq.url, data);
+      return callback(null, data, flags);
     });
 
 <a name="proxy_onWebSocketError" />
